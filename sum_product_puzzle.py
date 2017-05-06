@@ -51,7 +51,6 @@ def listfactorpairs_num(l):
 def listproduct(l):
     return [ i[0]*i[1] for i in l]
 
-print('Making a table of all possible numbers')
 numbers = [[[i,j]] for i in range(2,100) for j in range(2,100) 
               if (i+j<=100) & (i<j)]
 numbers = pd.DataFrame(numbers, columns=['nums'])
