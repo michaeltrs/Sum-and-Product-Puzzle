@@ -20,8 +20,6 @@ step3 - S says "Now I also know X and Y."
 What are X and Y?
 
 """
-from time import time
-t0 = time()
 
 import pandas as pd
 import itertools
