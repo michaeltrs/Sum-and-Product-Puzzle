@@ -57,19 +57,14 @@ numbers['S'] = numbers['nums'].apply(lambda n:n[0]+n[1])
 numbers['P'] = numbers['nums'].apply(lambda n:n[0]*n[1])
 
 numbers['terms'] = numbers['S'].apply(termpairs)
-
 numbers['termsproduct'] = numbers['terms'].apply(listproduct)
-
 numbers['num_termsproductfactors'] = numbers['termsproduct'].apply(listfactorpairs_num)
-
 numbers = numbers[numbers['num_termsproductfactors']]
 
 numbers['Pfreq'] = numbers.groupby('P')['P'].transform('count')
-
 numbers = numbers[numbers['Pfreq']==1]
 
 numbers['Sfreq'] = numbers.groupby('S')['S'].transform('count')
-
 numbers = numbers[numbers['Sfreq']==1]
 
 print(numbers['nums'].values)
